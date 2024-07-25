@@ -1,0 +1,8 @@
+(function(){var g={}; var _ = _ || {}
+var f=function(window){var ty=function(){this.g=new _.K("clpp.onboard");this.j=new Set},uy=function(a,b){function c(l){return l&&(_.R.startsWith(l,"https://")||_.R.startsWith(l,"http://")||_.R.startsWith(l,"//"))?l:d+l}var d=b.baseUrl;_.R.endsWith(d,"/")||(d+="/");var e=c(b.widevineUrl||"widevine"),f=c(b.playreadyUrl||"playready"),g=c(b.fairplayUrl||"fairplay"),h=new _.$l(a);h.Ta(_.Rd,{licenseUrl:e,videoRobustness:[_.Vb,void 0],audioRobustness:[_.Ub,void 0],persistentStateRequired:!1,distinctiveIdentifierRequired:!1,serverCertificate:null,
+modifiers:{licenseRequest:_.Pm,licenseResponse:_.Um}});h.Ta(_.Md,{licenseUrl:g,certificateUrl:g,modifiers:{licenseRequest:_.Rm,licenseResponse:_.Sm,extractContentId:_.Nm,certificateRequest:_.Tm}});h.Ta(_.Pd,{licenseUrl:f,modifiers:{licenseRequest:_.Pm}});_.Vl(h)};_.w(ty,_.Ir);ty.prototype.a=function(){for(var a=_.u(this.j),b=a.next();!b.done;b=a.next())delete _.Ul[b.value];this.j.clear()};
+ty.prototype.h=function(a){a=a.getConfiguration().drm;var b;if(b=!(!a||!a.env))b=a&&a.customData,b=!(!b||!b.baseUrl);b&&(b=a.env,a=a.customData,a={baseUrl:a.baseUrl,widevineUrl:a.widevineUrl,playreadyUrl:a.playreadyUrl,fairplayUrl:a.fairplayUrl},this.g.info("Registering the DRMtoday Onboard environment, name\x3d'"+b+"'"),uy(b,a),this.j.add(b))};ty.prototype.id=function(){return"onboard"};_.H("clpp.onboard.OnboardComponent",ty);_.H("clpp.onboard.register",uy);};
+if(typeof(module)!="undefined"&&module.exports){var x=require("./cl.core.js");_ = x._;(f.call(g,this));module.exports=g;}
+else if (typeof(define)!="undefined"&&define.amd) {define(["./cl.core"], function(c){_=c._;(f.call(g,this));return g;});}
+else{_=this.clpp._;(f.call(g,this));}
+})();
