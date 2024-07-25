@@ -1,0 +1,10 @@
+{
+  "id": "com.drmtoday.demo",
+  "version": "1.0.0",
+  "vendor": "castLabs GmbH",
+  "type": "web",
+  "main": "index-prestoplay.html",
+  "title": "DRMtoday demo app",
+  "icon": "castlabs-icon-RGB_80.png",
+  "largeIcon": "castlabs-icon-RGB_130.png"
+}

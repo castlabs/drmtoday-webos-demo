@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script src="./prestoplay/cl.core.js"></script>
+        <script src="./prestoplay/cl.mse.js"></script>
+        <script src="./prestoplay/cl.dash.js"></script>
+        <link rel="stylesheet" href="css/clpp.styles.css">
+    </head>
+    <body>
+        <video id="video" crossorigin="anonymous" controls width="1920" height="1080"></video>
+
+        <script>
+            let player = new clpp.Player('video', {});
+            player.use(clpp.dash.DashComponent);
+
+            player.on(clpp.events.ERROR, function (e) {
+                let error = e.detail;
+                console.log(error.message);
+            });
+
+            player.load({
+                source: 'https://demo.cf.castlabs.com/media/bbb_abr/Manifest.mpd',
+                type: clpp.Type.DASH,
+                autoplay: true,
+                drm: {
+                    env: 'DRMtoday_STAGING',
+                    customData: {
+                        userId: 'purchase',
+                        sessionId: 'default',
+                        merchant: 'client_dev',
+                    }
+                }
+            });
+        </script>
+    <body>
+</html>
